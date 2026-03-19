@@ -3,59 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معايدة خاصة</title>
+    <title>تهنئة</title>
     <style>
         body {
             margin: 0; padding: 0; display: flex; justify-content: center;
-            align-items: center; height: 100vh; background: #0a0a0a;
-            color: #fff; font-family: sans-serif; overflow: hidden;
+            align-items: center; height: 100vh; background: #050505;
+            color: #fff; font-family: 'Segoe UI', Tahoma, sans-serif; overflow: hidden;
         }
         .container {
-            text-align: center; padding: 30px; border-radius: 20px;
-            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 0 20px rgba(0, 210, 255, 0.3);
+            text-align: center; padding: 50px; border-radius: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-        h1 { font-size: 2.5rem; background: linear-gradient(45deg, #f39c12, #f1c40f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        
-        /* تصميم الزر */
+        h1 { 
+            font-size: 3rem; 
+            color: #f39c12; 
+            margin-bottom: 10px;
+        }
+        p { font-size: 1.3rem; color: #ccc; }
         .btn {
-            margin-top: 20px; padding: 12px 25px; font-size: 1.1rem;
-            background: #f39c12; color: #000; border: none;
-            border-radius: 50px; cursor: pointer; font-weight: bold;
-            transition: 0.3s; box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+            margin-top: 30px; padding: 12px 40px; font-size: 1.1rem;
+            background: transparent; color: #f39c12; border: 1px solid #f39c12;
+            cursor: pointer; transition: 0.3s;
         }
-        .btn:hover { background: #e67e22; transform: scale(1.05); }
-
-        /* تأثير النجوم */
-        .star { position: absolute; background: #fff; border-radius: 50%; opacity: 0.5; animation: fall linear infinite; }
-        @keyframes fall { to { transform: translateY(100vh); } }
+        .btn:hover { background: #f39c12; color: #000; }
+        
+        /* تأثير هادئ جداً بالخلفية */
+        .dot { position: absolute; background: rgba(243, 156, 18, 0.2); border-radius: 50%; animation: move linear infinite; }
+        @keyframes move { from { transform: translateY(100vh); } to { transform: translateY(-10vh); } }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>كل عام وأنت بخير ✨</h1>
-        <p>أتمنى لك عيداً سعيداً يا صديقي</p>
-        <button class="btn" onclick="showSecret()">إضغط لرؤية الرسالة السرية</button>
-        <p style="margin-top: 20px; font-weight: bold; color: #00d2ff;">S A I N T</p>
+        <h1>عيد مبارك ✨</h1>
+        <p>كل عام وأنت بألف خير</p>
+        <button class="btn" onclick="showMsg()">إضغط هنا</button>
     </div>
 
     <script>
-        function showSecret() {
-            alert("هذه الرسالة خاصة لك: شكراً لكونك صديقاً رائعاً! أتمنى لك النجاح في كل مشاريعك.");
+        function showMsg() {
+            alert("أتمنى لك عيداً سعيداً، وكل عام وأنت بألف خير وصحة وسلامة.");
         }
 
-        function createStar() {
-            const star = document.createElement('div');
-            star.classList.add('star');
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.width = Math.random() * 3 + 'px';
-            star.style.height = star.style.width;
-            star.style.animationDuration = Math.random() * 2 + 3 + 's';
-            document.body.appendChild(star);
-            setTimeout(() => star.remove(), 5000);
+        function createDot() {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.style.left = Math.random() * 100 + 'vw';
+            dot.style.width = '2px';
+            dot.style.height = '2px';
+            dot.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.body.appendChild(dot);
+            setTimeout(() => dot.remove(), 10000);
         }
-        setInterval(createStar, 100);
+        setInterval(createDot, 500);
     </script>
 
 </body>
