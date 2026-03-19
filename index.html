@@ -3,61 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تهنئة</title>
+    <title>معايدة خاصة</title>
     <style>
         body {
             margin: 0; padding: 0; display: flex; justify-content: center;
-            align-items: center; height: 100vh; background: #050505;
-            color: #fff; font-family: 'Segoe UI', Tahoma, sans-serif; overflow: hidden;
+            align-items: center; min-height: 100vh; background: #fdfdfd;
+            color: #333; font-family: 'Segoe UI', Tahoma, sans-serif;
         }
         .container {
-            text-align: center; padding: 50px; border-radius: 10px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: center; padding: 20px; max-width: 90%;
         }
-        h1 { 
-            font-size: 3rem; 
-            color: #f39c12; 
-            margin-bottom: 10px;
+        .card-img {
+            width: 100%; max-width: 350px; border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
         }
-        p { font-size: 1.3rem; color: #ccc; }
-        .btn {
-            margin-top: 30px; padding: 12px 40px; font-size: 1.1rem;
-            background: transparent; color: #f39c12; border: 1px solid #f39c12;
-            cursor: pointer; transition: 0.3s;
+        .text-box {
+            background: #fff; padding: 20px; border-radius: 10px;
+            border: 1px solid #eee; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
-        .btn:hover { background: #f39c12; color: #000; }
-        
-        /* تأثير هادئ جداً بالخلفية */
-        .dot { position: absolute; background: rgba(243, 156, 18, 0.2); border-radius: 50%; animation: move linear infinite; }
-        @keyframes move { from { transform: translateY(100vh); } to { transform: translateY(-10vh); } }
+        h2 { color: #d35400; margin: 0 0 10px 0; font-size: 1.5rem; }
+        p { font-size: 1.1rem; line-height: 1.6; color: #555; margin-bottom: 5px; }
+        .signature { font-weight: bold; color: #2c3e50; margin-top: 15px; display: block; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>عيد مبارك ✨</h1>
-        <p>كل عام وأنت بألف خير</p>
-        <button class="btn" onclick="showMsg()">إضغط هنا</button>
+        <img src="https://i.ibb.co/LzdYp0R/1000424114.jpg" class="card-img" alt="معايدة">
+        
+        <div class="text-box">
+            <h2>عيد مبارك ✨</h2>
+            <p>أتمنى لك عيداً سعيداً، وكل عام وأنت بألف خير وصحة وسلامة</p>
+            <span class="signature">من: أمير</span>
+        </div>
     </div>
-
-    <script>
-        function showMsg() {
-            alert("أتمنى لك عيداً سعيداً، وكل عام وأنت بألف خير وصحة وسلامة.");
-        }
-
-        function createDot() {
-            const dot = document.createElement('div');
-            dot.classList.add('dot');
-            dot.style.left = Math.random() * 100 + 'vw';
-            dot.style.width = '2px';
-            dot.style.height = '2px';
-            dot.style.animationDuration = Math.random() * 5 + 5 + 's';
-            document.body.appendChild(dot);
-            setTimeout(() => dot.remove(), 10000);
-        }
-        setInterval(createDot, 500);
-    </script>
 
 </body>
 </html>
